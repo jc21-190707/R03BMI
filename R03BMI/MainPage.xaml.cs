@@ -18,8 +18,8 @@ namespace R03BMI
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            var height = height.Text;
-            var weight = weight.Text;
+            var height = heighit.Text;
+            var weight = weighit.Text;
             try
             { 
                 double h = double.Parse(height);
@@ -27,16 +27,16 @@ namespace R03BMI
                 {
                     h = h / 100;
                 }
-                double w = double.parse(weight);
+                double w = double.Parse(weight);
                 double bmi = w/h/h;
                 int bmi2 = (int)(bmi * 10);
                 double bmi3 = (double)(bmi2/10.0);
-                lblHeight.Text = "身長"　+ h + " m 体重"　+ w + "kgの人のBMIは"　+ bmi3 + "です。";
+                result.Text = "身長"　+ h + " m 体重"　+ w + "kgの人のBMIは"　+ bmi3 + "です。";
             }
             catch(FormatException ex)
             {
                 Console.WriteLine(ex);
-                lblHeight.Text = "! ! !";
+                result.Text = "! ! !";
             }
         }
     }
